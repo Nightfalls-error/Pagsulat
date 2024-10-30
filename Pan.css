@@ -1,0 +1,57 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    background-color: #F4E3CF;
+    background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+}
+
+h1 {
+    color: #8B4513;
+    margin-bottom: 1rem;
+}
+
+.card {
+    background-color: #FFF3E0;
+    border: 2px solid #8B4513;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #C75146;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    color: #4B3621;
+}
+
+button {
+    background-color: #C75146;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+    button:hover {
+        background-color: #8B4513;
+    }
