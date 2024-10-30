@@ -1,4 +1,4 @@
-﻿// Fetch the JSON file and set up the randomizer logic
+// Fetch the JSON file and set up the randomizer logic
 fetch('slang-words.json')
     .then(response => response.json())
     .then(data => {
@@ -23,9 +23,26 @@ fetch('slang-words.json')
         }
 
         // Event listener for the "Generate Random Slang" button
-        const button = document.getElementById('randomizeButton');
-        const slangWordDisplay = document.getElementById('slangWord');
-        const slangMeaningDisplay = document.getElementById('slangMeaning');
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('randomSlangBtn');
+            const display = document.getElementById('slangDisplay');
+
+            // Check if the elements exist to avoid errors
+            if (button && display) {
+                button.addEventListener('click', () => {
+                    fetch('slang-words.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            const randomIndex = Math.floor(Math.random() * data.slangs.length);
+                            display.textContent = `${data.slangs[randomIndex].word}: ${data.slangs[randomIndex].meaning}`;
+                        })
+                        .catch(error => console.error('Error fetching slang words:', error));
+                });
+            } else {
+                console.error('Button or display element not found!');
+            }
+        });
+
 
         button.addEventListener('click', () => {
             const randomSlang = getRandomWeighted();
